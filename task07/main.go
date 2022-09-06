@@ -31,9 +31,16 @@ func main() {
 		Entry: make(map[int]int),
 	}
 
+	wg := sync.WaitGroup{}
+	wg.Add(10)
+
 	for i := 0; i < 10; i++ {
-		m.Add(rand.Intn(1000), rand.Intn(1000))
+		go func(wg *sync.WaitGroup) {
+			m.Add(rand.Intn(1000), rand.Intn(1000))
+			wg.Done()
+		}(&wg)
 	}
 
+	wg.Wait()
 	fmt.Printf("%#v", m.Entry)
 }
