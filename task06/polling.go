@@ -6,8 +6,6 @@ import (
 	"time"
 )
 
-// https://www.sobyte.net/post/2021-06/several-ways-to-stop-goroutine-in-golang/
-
 func main() {
 	c := make(chan string, 6)
 	// channel to be used as a semaphore to handle the closing of the goroutine

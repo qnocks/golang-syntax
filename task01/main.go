@@ -12,7 +12,7 @@ func (h Human) Pretty() string {
 }
 
 type Action struct {
-	Human // Human is the embedded struct
+	Human // Human is the embedded struct (composition)
 }
 
 func main() {

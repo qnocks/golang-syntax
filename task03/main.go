@@ -30,8 +30,9 @@ func main() {
 
 	// close the channel on write
 	close(squares)
-	var result int
+
 	// loop through the channel and calc result
+	var result int
 	for c := range squares {
 		result += c
 	}

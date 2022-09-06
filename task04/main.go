@@ -35,7 +35,7 @@ func main() {
 	// channel to handle Ctrl+C signal
 	interrupt := make(chan os.Signal, 1)
 
-	// assign interrupt signals to interrupt the channel
+	// assign interrupt signals to the interrupt channel
 	signal.Notify(interrupt, os.Interrupt)
 
 	for i := 0; i < n; i++ {
